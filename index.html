@@ -1,0 +1,520 @@
+  <!-- TO RUN IN BROWSER:
+    1. Install vscode extension Name: open in `browser open-in-browser` by TechER
+    2. Right click html file and either run in default browser or another browser
+  -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accessible Compenents: Dropdown Menus</title>
+    <!-- import CSS styles -->
+    <link rel="stylesheet" href="styles.css" /> 
+  </head>
+
+  <!-- page content goes into <body> -->
+  <body>
+    <div>
+      <div>
+      <h1>Accessible Compenents: Dropdown Menus</h1>
+      <h3>
+        On this page we will be discussing the strengths and pitalls <br> of dropdown
+        menus in terms of accessiblilty.
+      </h3>
+    </div>
+
+
+    <div>
+      <h4>
+        <label for="sites">The sites I looked at for my analysis are below:</label>
+      </h4>
+    
+      <select id="sites" name="sites" onchange="window.open(this.value, '_blank')">
+        <option value="">-- Select a site --</option>
+        <option value="https://dining.brown.edu/">Brown University Dining</option>
+        <option value="https://www.cnn.com/">CNN</option>
+        <option value="https://www.coolmathgames.com/">Cool Math Games</option>
+      </select>
+    </div>
+    
+    <div>
+      <p>
+        Interact with the sites above! I know I will!
+        <br>
+        <br>
+        Now below we will examine images of how these websites present dropdown
+        menus via different forms of interaction <br> with the site:
+      </p>
+
+      <h4> Brown University Dining Images: </h4>
+      <div id="staffGallery">
+        <div class="imageContainer" style="width: 400px;">
+          <h5>No Interaction (Default)</h5>
+          <img class="galleryImage" src="./assets/Brown-Dining-Default.png" alt="No Interaction: Default State">
+        </div>
+      
+        <div class="imageContainer" style="width: 400px;">
+          <h5>Mouse Interaction</h5>
+          <img class="galleryImage" src="./assets/Brown-Dining-Mouse.png" alt="Mouse Interaction">
+        </div>
+      
+        <div class="imageContainer" style="width: 400px;">
+          <h5>Keyboard Interaction</h5>
+          <img class="galleryImage" src="./assets/Brown-Dining-Keyboard.png" alt="Keyboard Interaction">
+        </div>
+      
+        <div class="imageContainer" style="width: 150px; height: 400px;">
+          <h5>Mobile Interaction</h5>
+          <img class="galleryImage" src="./assets/Brown-Dining-Mobile.png" alt="Mobile Interaction">
+        </div>
+      </div>
+
+
+
+      <h4> CNN Images: </h4>
+      <div id="staffGallery">
+        <div class="imageContainer" style="width: 400px;">
+          <h5>No Interaction (Default)</h5>
+          <img class="galleryImage" src="./assets/CNN-Default.png" alt="No Interaction: Default State">
+        </div>
+      
+        <div class="imageContainer" style="width: 400px;">
+          <h5>Mouse Interaction</h5>
+          <img class="galleryImage" src="./assets/CNN-Mouse.png" alt="Mouse Interaction">
+        </div>
+      
+        <div class="imageContainer" style="width: 400px;">
+          <h5>Keyboard Interaction</h5>
+          <img class="galleryImage" src="./assets/CNN-Keyboard.png" alt="Keyboard Interaction">
+        </div>
+      
+        <div class="imageContainer" style="width: 150px; height: 400px;">
+          <h5>Mobile Interaction</h5>
+          <img class="galleryImage" src="./assets/CNN-Mobile.png" alt="Mobile Interaction">
+        </div>
+      </div>
+
+
+      <h4> Cool Math Games Images: </h4>
+      <div id="staffGallery">
+        <div class="imageContainer" style="width: 400px;">
+          <h5>No Interaction (Default)</h5>
+          <img class="galleryImage" src="./assets/CMG-Default.png" alt="No Interaction: Default State">
+        </div>
+      
+        <div class="imageContainer" style="width: 400px;">
+          <h5>Mouse Interaction</h5>
+          <img class="galleryImage" src="./assets/CMG-Mouse.png" alt="Mouse Interaction">
+        </div>
+      
+        <div class="imageContainer" style="width: 400px;">
+          <h5>Keyboard Interaction</h5>
+          <img class="galleryImage" src="./assets/CMG-Keyboard.png" alt="Keyboard Interaction">
+        </div>
+      
+        <div class="imageContainer" style="width: 150px; height: 400px;">
+          <h5>Mobile Interaction</h5>
+          <img class="galleryImage" src="./assets/CMG-Mobile.png" alt="Mobile Interaction">
+        </div>
+      </div>
+
+
+
+      <p>
+        Now, lets get into a quick analysis of possible forms of interaction 
+        and input from the user and how successful they were across the 3 sites:
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Inputs</th>
+            <th>Brown University Dining</th>
+            <th>CNN</th>
+            <th>Cool Math Games</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Mouse/Touchpad</strong></td>
+            <td>
+              <ul>
+                <li>Hovering over a button reveals the dropdown menu.</li>
+                <li>Turns button text to a darker color.</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>Hovering over the “More” reveals the dropdown menu.</li>
+                <li>Text gains an underline.</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>Hovering over a button reveals the dropdown menu.</li>
+                <li>The button gains a yellow background.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Keyboard</strong></td>
+            <td>
+              <ul>
+                <li>Focusing on the keyboard gives the button a blue outline.</li>
+                <li>A separate arrow button is revealed per button to open its dropdown.</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>Focusing on the keyboard gives the button a blue outline.</li>
+                <li>The keyboard skips over the “More” button completely.</li>
+                <li>You must find an alternate way to access the dropdown (the lines in the upper right corner).</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>Focusing on the keyboard gives the button a white outline.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Touch (if available)</strong></td>
+            <td>
+              <ul>
+                <li>The dropdown list is a bit hidden behind another button.</li>
+                <li>It functions like a dropdown within a dropdown.</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>The lines in the upper right corner are the only dropdown option.</li>
+                <li>“More” button does not exist.</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>The dropdown menu is at the bottom of the UI.</li>
+                <li>Functions more as a drop-up as items are populated above.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Accessibility for input</strong></td>
+            <td>
+              <ul>
+                <li>2nd most accessible and straightforward.</li>
+                <li>Keyboard navigation is less straightforward due to hidden components.</li>
+                <li>All functionality is transferred.</li>
+                <li>UI is stylish, consistent, and intuitive.</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>Least accessible and a bit confusing.</li>
+                <li>Inconsistent pattern of dropdown functionality.</li>
+                <li>Mouse functionality doesn’t fully transfer to mobile.</li>
+                <li>UI is plain and uninspired.</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>Most accessible and straightforward across all mediums.</li>
+                <li>All functionality transfers seamlessly.</li>
+                <li>UI is stylish, consistent, and intuitive.</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <br>
+      <br>
+
+      <p>
+        One of the most importance considerations to think about whenever you 
+        implement a new component or modifiy an exsiting one is how your component <br>
+        will perform in terms of learnablilty, memorablilty, and efficiency.
+        <br>
+        <br>
+        Learnablilty refers to how learnable an element/component is for a new 
+        user who may not have any prior experience with it. Mmemorablilty refers <br>
+        to how easy it is for user to remember how to use and navigate the 
+        element at hand. For both of these considerations, the intuitive nature <br>
+        and universal recongnition of the component and it's function play a big
+        role. Lastly, efficiency refers to how quickly and easily a component can <br>
+        comeplete its function once the user intracts with it.
+        <br>
+        <br>
+        Let's see how the dropdown menus on the 3 website do in terms of these
+        considerations:
+      </p>
+
+      <table>
+        <tr>
+          <th>Let Learnable, Memorable, and Efficient be represented by (L), (M), and (E) respectively.</th>
+          <th><strong>Brown University Dining</strong></th>
+          <th><strong>CNN</strong></th>
+          <th><strong>Cool Math Games</strong></th>
+        </tr>
+        <tr>
+          <th>What can the dropdown do?</th>
+          <td>
+            <ul>
+              <li>Displays a list of options to the user (L, M, E)</li>
+              <li>Hides features until the user deems them necessary (saving space) (E)</li>
+              <li>Provides visual cues via arrows (M, L, E)</li>
+              <li>Modifies the list of options to appear in the same scheme as UI (M, L, E)</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>Displays a list of options to the user (L, M, E)</li>
+              <li>Hides features until the user deems them necessary (saving space) (E)</li>
+              <li>Modifies the list of options to appear in the same scheme as UI (M, L, E)</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>Displays a list of options to the user (L, M, E)</li>
+              <li>Hides features until the user deems them necessary (saving space) (E)</li>
+              <li>Provides visual cues via arrows (M, L, E)</li>
+              <li>Modifies the list of options to appear in the same scheme as UI (M, L, E)</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <th>What can’t the dropdown do?</th>
+          <td>
+            <ul>
+              <li>Create new options on the fly for user preference or activity</li>
+              <li>Do complex calculations</li>
+              <li>Directly access external data</li>
+              <li>Handle complex user actions</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>Create new options on the fly for user preference or activity</li>
+              <li>Do complex calculations</li>
+              <li>Directly access external data</li>
+              <li>Handle complex user actions</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>Create new options on the fly for user preference or activity</li>
+              <li>Do complex calculations</li>
+              <li>Directly access external data</li>
+              <li>Handle complex user actions</li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+
+      <br>
+      <br>
+
+      <p>
+        Now, lets get into a quick analysis of the results of interaction 
+        and outputs the user recieves and how successful they were across the 3 sites:
+      </p>
+
+      <table>
+        <tr>
+          <th>Outputs</th>
+          <th><strong>Brown University Dining</strong></th>
+          <th><strong>CNN</strong></th>
+          <th><strong>Cool Math Games</strong></th>
+        </tr>
+        <tr>
+          <th>Visual</th>
+          <td>
+            <ul>
+              <li>The component changes to a darker shade when focused on.</li>
+              <li>The items in the list turn red when focused on.</li>
+              <li>The contrast with a white background works well for the lists.</li>
+              <li>When the brown background meshes with the darkened text, contrast isn’t very significant, which can be a concern.</li>
+              <li>When an item in a list is clicked, it opens a new page.</li>
+              <li>The base state is white text on a brown background, which works well.</li>
+              <li>The focus starts with headers and titles before going toward the smaller text and is fairly intuitive.</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>The base state is black text on a white background, which contrasts well but is a bit plain.</li>
+              <li>When hovering over “More,” the text is underlined and the menu opens.</li>
+              <li>The items listed contrast well.</li>
+              <li>When hovered over, the background and text switch palettes and contrast well.</li>
+              <li>Clicking on a list item goes to a new page.</li>
+              <li>The focus starts with headers and titles before going toward the smaller text and is fairly intuitive.</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>The base state is white text on a blue background, which contrasts well.</li>
+              <li>When hovered over, the background becomes yellow and the text gets dark so the contrast still works.</li>
+              <li>Clicking on a list item goes to a new page.</li>
+              <li>List items pop out when hovered over.</li>
+              <li>The focus starts with headers and titles before going toward the smaller text and is fairly intuitive.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <th>Audio</th>
+          <td>
+            <ul>
+              <li>VoiceOver does a good job of describing the content and giving positional cues.</li>
+              <li>It seems a bit abrupt and the focus order started from a higher level than with keyboard inputs.</li>
+              <li>Hard to gain contextual cues of location from just the audio.</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>The “More” button is ignored by the VoiceOver function, just like with the keyboard functions.</li>
+              <li>It’s hard to select text to be read if it was also a link, as the linked URL would open.</li>
+              <li>Navigation from link to link is difficult when trying to get to a target location.</li>
+              <li>VoiceOver immediately starts talking again before you’re ready to be oriented with the new page.</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>VoiceOver can get stuck in certain windows of the site when using tabs to navigate.</li>
+              <li>Some sliding windows with multiple games require continuously clicking to exit.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <th>Tactile (if available)</th>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+        </tr>
+        <tr>
+          <th>Accessibility for Output</th>
+          <td>Output is fairly accessible.</td>
+          <td>Output is fairly accessible.</td>
+          <td>Output is fairly accessible.</td>
+        </tr>
+      </table>
+
+      <br>
+      <br>
+      <br>
+
+
+      <p>
+        Now, here is my interpretation of the possible states of the dropdown 
+        menu when accesed though mouse and Keyboard interation. 
+      </p>
+
+      <h4> For ease of viewing, I'll using a states diagram to showcase this: </h4>
+      <div id="staffGallery">
+        <div class="imageContainer" style="width: 400px;">
+          <h5>Dropdown Component for Mouse User</h5>
+          <img class="galleryImage" src="./assets/States-for-Mouse.png" alt="Dropdown Component for Mouse User">
+        </div>
+      
+        <div class="imageContainer" style="width: 400px;">
+          <h5>Dropdown Component for Keyboard User</h5>
+          <img class="galleryImage" src="./assets/States-for-Keyboard.png" alt="Dropdown Component for Keyboard User">
+        </div>
+      </div>
+
+    <br>
+    <br>
+    <br>
+
+      <h4>
+        Now, that we have reviewed the states diagrams, here is what I'd to 
+        improve the current function of these diagrams:
+      </h4>
+      <div id="staffGallery">
+        <div class="imageContainer" style="width: 400px;">
+          <h5>Dropdown Component for Mouse User (Revised)</h5>
+          <img class="galleryImage" src="./assets/States-for-Mouse-Revised.png" alt="Dropdown Component for Mouse User: Revised">
+        </div>
+      
+        <div class="imageContainer" style="width: 400px;">
+          <h5>Dropdown Component for Keyboard User (Revised)</h5>
+          <img class="galleryImage" src="./assets/States-for-Keyboard-Revised.png" alt="Dropdown Component for Keyboard User: Revised">
+        </div>
+      </div>
+
+
+      <h4>Dropdown Component for Mouse User (Revised)</h4>
+      <ul>
+        <li>The main purpose of this component is to improve its accessibility.</li>
+        <li>An extra click confirmation state would allow those with low vision and cognitive disabilities to receive extra feedback to indicate the state change.</li>
+        <li>This feature is fairly intuitive, so its learnability would be quite high as users use this new system.</li>
+        <li>Its intuitive nature would also increase memorability, as ripple confirmation of interaction is small but memorable.</li>
+        <li>Efficiency would remain unaffected by this change.</li>
+      </ul>
+    
+      <h4>Dropdown Component for Keyboard User (Revised)</h4>
+      <ul>
+        <li>The main purpose of this component is to improve its efficiency.</li>
+        <li>By offering a quicker way to the preferred menu item, you greatly decrease the time it takes to navigate the web page to the dropdown destination in mind.</li>
+        <li>This feature is quite intuitive which means that learnability would be high.</li>
+        <li>It’s useful in almost all scenarios involving a dropdown menu, making it memorable.</li>
+      </ul>
+
+
+
+
+      <h2>Final Reflection on Dropdown Menu Usability Accessibility</h2>
+      <ul>
+        <li>The dropdown menu component's strengths come from its universal 
+          familiarity and recognition that it’s gained from consistent use <br>
+          throughout the internet. It’s very space-efficient and only expands 
+          its menu options when needed. Keyboard access is easy to implement and <br>
+          screen reader support works well for this component.
+        </li>
+
+        <li>Adding the click confirmation state enhances accessibility via the 
+          immediate feedback the user is given when clicking on the menu.  From <br>
+          the visual ripple to a possible auditory cue to confirm the user’s 
+          actions, the usability of the component improves greatly.
+        </li>
+        <li>This resolves the “mismatch” between how those with motor and/or 
+          visual impairments can interact with technology and how they are <br>
+          expected to interact by developers. Now they can rest easy knowing 
+          that their click was successful rather than second-guessing their <br>
+          actions if the dropdown menu is slow to render.
+        </li>
+      </ul>
+
+
+      <br> 
+      <br> 
+
+      <p>
+        Today, using a mouse to navigate buttons and components on the internet 
+        has become standard practice. As a result, when we think of maximizing <br> 
+        accessibility a lot of the effort UX engineers put into making progress 
+        in this area goes towards that form of interaction, leaving others neglected. <br> 
+        An example of this can be seen in the universal design of the mouse and 
+        contrast considerations for aesthetic purposes and those with impaired vision. <br> 
+        The black center with a white outline with a thick yet subtle shadow points 
+        to the developers considering how the mouse would look as it traversed a <br> 
+        page with any combination of colors. Another example that showcases other 
+        neglected components can be seen with keyboard interaction and how certain <br> 
+        components aren’t accessible the way they would be via mouse. This can be 
+        seen in an unintuitive focus order of elements or in some clickable elements <br> 
+        being skipped entirely by the keyboard, leaving fewer options for those 
+        who can’t rely on other forms of interaction.
+      </p>
+
+      <br> 
+      <br> 
+      <br> 
+      <br>
+      <br> 
+
+
+    </div>
+    </div>
+    <!-- <hr/> -->
+  </body>
+
+</html>
