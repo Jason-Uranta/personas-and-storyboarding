@@ -21,7 +21,7 @@ body {
 
 .galleryImage {
   width: 100%;                /* Fill the container width */
-  height: 280px;              /* Fixed height to prevent stretching */
+  height: 500px;              /* Fixed height to prevent stretching */
   object-fit: contain;          /* Show the whole image without cropping */
   border-radius: 10px;         /* rounded corners */
   background-color: #f0f0f0;
